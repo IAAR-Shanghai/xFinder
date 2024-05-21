@@ -1,4 +1,4 @@
-<div align="center"><h2>🔎xFinder: Robust and Pinpoint Answer Extraction for Large Language Models</h2></div>
+<div align="center"><h2><img src="./assets/xfinder_logo.jpg" width=4%>xFinder: Robust and Pinpoint Answer Extraction for Large Language Models</h2></div>
 
 <p align="center">
     <!-- arxiv badges -->
