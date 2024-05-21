@@ -25,7 +25,7 @@
         <a href="https://github.com/Duguce">Qingchen Yu</a><sup>1,*</sup>, 
         <a href="https://github.com/fan2goa1">Zifan Zheng</a><sup>1,*</sup>, 
         <a href="https://github.com/Ki-Seki">Shichao Song</a><sup>2,*</sup>, 
-        <a href="https://github.com/zhiyulee-RUC">Zhiyu Li</a><sup>1</sup>, Feiyu Xiong<sup>1</sup>, Bo Tang<sup>1</sup>, <a href="https://github.com/hush-cd">Ding Chen</a><sup>1</sup>
+        <a>Zhiyu Li</a><sup>1</sup>, Feiyu Xiong<sup>1</sup>, Bo Tang<sup>1</sup>, <a href="https://github.com/hush-cd">Ding Chen</a><sup>1</sup>
     </p>
     <p>
         <sup>1</sup><a href="https://www.iaar.ac.cn/">Institute for Advanced Algorithms Research, Shanghai</a>, <sup>2</sup><a href="https://en.ruc.edu.cn/">Renmin University of China</a>
