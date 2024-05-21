@@ -2,7 +2,7 @@
 
 <p align="center">
     <!-- arxiv badges -->
-    <a href="">
+    <a href="https://arxiv.org/abs/2405.11874">
         <img src="https://img.shields.io/badge/Paper-red?style=flat&logo=arxiv">
     </a>
     <!-- Github -->
@@ -25,7 +25,7 @@
         <a href="https://github.com/Duguce">Qingchen Yu</a><sup>1,*</sup>, 
         <a href="https://github.com/fan2goa1">Zifan Zheng</a><sup>1,*</sup>, 
         <a href="https://github.com/Ki-Seki">Shichao Song</a><sup>2,*</sup>, 
-        <a>Zhiyu Li</a><sup>1</sup>, Feiyu Xiong<sup>1</sup>, Bo Tang<sup>1</sup>, <a href="https://github.com/hush-cd">Ding Chen</a><sup>1</sup>
+        <a>Zhiyu Li</a><sup>1,†</sup>, Feiyu Xiong<sup>1</sup>, Bo Tang<sup>1</sup>, <a href="https://github.com/hush-cd">Ding Chen</a><sup>1</sup>
     </p>
     <p>
         <sup>1</sup><a href="https://www.iaar.ac.cn/">Institute for Advanced Algorithms Research, Shanghai</a>, <sup>2</sup><a href="https://en.ruc.edu.cn/">Renmin University of China</a>
@@ -39,3 +39,13 @@
 <div align="center">
     <img src="./assets/framework.jpg" alt="xFinder" width="90%">
 </div>
+
+## Citation
+```
+@article{xFinder,
+      title={xFinder: Robust and Pinpoint Answer Extraction for Large Language Models}, 
+      author={Qingchen Yu and Zifan Zheng and Shichao Song and Zhiyu Li and Feiyu Xiong and Bo Tang and Ding Chen},
+      journal={arXiv preprint arXiv:2405.11874},
+      year={2024},
+}
+```
