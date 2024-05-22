@@ -38,7 +38,7 @@
 
 ## Overview
 <div align="center">
-    <img src="./assets/framework.jpg" alt="xFinder" width="90%">
+    <img src="./assets/framework.jpg" alt="xFinder" width="93%">
 </div>
 
 ## Citation
