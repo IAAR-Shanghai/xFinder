@@ -36,12 +36,41 @@
 
 <div align="center"><h5>For business inquiries, please contact us at <a href="mailto:lizy@iaar.ac.cn">lizy@iaar.ac.cn</a>.</h5></div>
 
-## Overview
+## :sparkles: Overview
 <div align="center">
     <img src="./assets/framework.jpg" alt="xFinder" width="93%">
 </div>
 
-## Citation
+## :zap: Quick Start
+1. Ensure you have Python 3.10.0+.
+2. Prepare the LLM outputs that you want to evaluate. 
+   1. You need to provide a `.json` file including original question, key answer type (alphabet / short_text / categorical_label / math), LLM output, standard answer range.
+   2. Refer to [`demo/example.json`](demo/example.json) for the detailed form.
+3. Deploy xFinder model, you can choose either [xFinder-qwen1505]() or [xFinder-llama38it]().
+
+Here's two methods to use xfinder: 
+**1. Use with install:**
+```bash
+> git clone  git@github.com:IAAR-Shanghai/xFinder.git
+> cd xFinder
+> conda create -n xfinder_env python=3.11 -y
+> conda activate xfinder_env
+> pip install -e .
+> xfinder $PATH_TO_CONFIG
+```
+**2. Use without install:**
+```bash
+> git clone  git@github.com:IAAR-Shanghai/xFinder.git
+> cd xFinder
+> pip install -r requirements.txt
+> python
+>>> from xfinder.eval import calc_acc
+>>> calc_acc($PATH_TO_CONFIG)
+```
+
+## 
+
+## :memo: Citation
 ```
 @article{xFinder,
       title={xFinder: Robust and Pinpoint Answer Extraction for Large Language Models}, 
@@ -50,3 +79,12 @@
       year={2024},
 }
 ```
+
+## :triangular_flag_on_post: TODOs
+<details><summary>Click me to show all TODOs</summary>
+
+- [ ] feat: customized configuration on attributes' names.
+- [ ] feat: demo
+- [ ] docs: add video tutorial
+
+</details>
