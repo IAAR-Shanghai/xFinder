@@ -86,10 +86,12 @@ After setting up the configuration file, you have two methods to proceed with th
 <details><summary>Click me to show all TODOs</summary>
 
 - [ ] feat: customized configuration on attributes' names.
+- [ ] feat: support quick replacement of RegEx in OpenCompass. 
 - [ ] feat: support parallel (or offline batched) evaluation
 - [ ] feat: demo deployment
 - [ ] feat: API deployment
 - [ ] codes: upload data construction pipeline codes
 - [ ] docs: add video tutorial
+- [ ] docs: add Overview, Results. 
 
 </details>
