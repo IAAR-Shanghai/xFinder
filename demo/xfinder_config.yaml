@@ -1,9 +1,8 @@
 # Configuration for xFinder model
 xfinder_model:
-  model_name: "xFinder-qwen1505"
-  # model_path: "/path/to/xFinder-model"
-  # or
-  # url: "API-url/to/xFinder-model"
+  model_name: "xFinder-qwen1505"        # must have, xFinder-qwen1505 or xFinder-llama38it
+  model_path: "/path/to/xFinder-model"  # path to the model, only need if use local deployment
+  url: "API-url/to/xFinder-model"       # url to the model, only need if use remote deployment
 
-# Configuration for data to be evaluated & evaluated
-data_path: "./demo/example.json"
+# Configuration for data file
+data_path: "./demo/example.json"        # path to the data which need to be evaluated

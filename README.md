@@ -42,13 +42,15 @@
 </div>
 
 ## :zap: Quick Start
-1. Ensure you have Python 3.10.0+.
-2. Prepare the LLM outputs that you want to evaluate. 
-   1. You need to provide a `.json` file including original question, key answer type (alphabet / short_text / categorical_label / math), LLM output, standard answer range.
-   2. Refer to [`demo/example.json`](demo/example.json) for the detailed form.
-3. Deploy xFinder model, you can choose either [xFinder-qwen1505]() or [xFinder-llama38it]().
+1. **Ensure Compatibility**: Ensure you have Python 3.10.0+.
+2. **Prepare QA pairs & LLM Outputs**: Prepare the LLM outputs that you want to evaluate. 
+   - provide a `.json` file including original question, key answer type (alphabet / short_text / categorical_label / math), LLM output, standard answer range.
+   - For a detailed example of the expected format, refer to [`demo/example.json`](demo/example.json).
+3. **Deploy the xFinder Model**: Choose between two models for deployment, [xFinder-qwen1505](https://huggingface.co/IAAR-Shanghai/xFinder-qwen1505) or [xFinder-llama38it](https://huggingface.co/IAAR-Shanghai/xFinder-llama38it).
+4. **Finish Configuration**: Compile the above details into a configuration file. For configuration details, see [`demo\xfinder_config.yaml`](demo/xfinder_config.yaml).
 
-Here's two methods to use xfinder: 
+After setting up the configuration file, you have two methods to proceed with the evaluation:
+
 **1. Use with install:**
 ```bash
 > git clone  git@github.com:IAAR-Shanghai/xFinder.git
@@ -84,7 +86,10 @@ Here's two methods to use xfinder:
 <details><summary>Click me to show all TODOs</summary>
 
 - [ ] feat: customized configuration on attributes' names.
-- [ ] feat: demo
+- [ ] feat: support parallel (or offline batched) evaluation
+- [ ] feat: demo deployment
+- [ ] feat: API deployment
+- [ ] codes: upload data construction pipeline codes
 - [ ] docs: add video tutorial
 
 </details>
