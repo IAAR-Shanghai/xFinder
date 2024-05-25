@@ -1,0 +1,21 @@
+# tmp directory
+tmp/
+*.egg-info/
+
+# Python bytecode
+*.pyc
+
+# Logs
+*.log
+
+# Virtualenv
+venv/
+
+# Build
+build/
+dist/
+__pycache__/
+
+# IDE
+.vscode/
+.idea/
