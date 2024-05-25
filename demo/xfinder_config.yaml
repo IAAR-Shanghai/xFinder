@@ -1,0 +1,9 @@
+# Configuration for xFinder model
+xfinder_model:
+  model_name: "xFinder-qwen1505"
+  # model_path: "/path/to/xFinder-model"
+  # or
+  # url: "API-url/to/xFinder-model"
+
+# Configuration for data to be evaluated & evaluated
+data_path: "./demo/example.json"
