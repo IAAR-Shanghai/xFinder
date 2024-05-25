@@ -92,9 +92,7 @@ if __name__ == '__main__':
         long_description=readme(),
         long_description_content_type='text/markdown',
         author='xFinder Contributors',
-        author_email='stevenzzf0926@gmail.com',
         keywords='LLM, NLP, answer extraction, reliable evaluation',
-        url='https://github.com/IAAR-Shanghai/xFinder',
         packages=find_packages(),
         egg_base='/tmp',
         classifiers=[
