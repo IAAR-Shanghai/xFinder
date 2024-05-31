@@ -40,6 +40,9 @@
 >
 > 🌟 **Star Us!** By starring our project on GitHub, you'll receive all release notifications instantly. Thank you for your support!
 
+## :loudspeaker: News
+- **[2024/05]** We released xFinder: Robust and Pinpoint Answer Extraction for Large Language Models. Check out the [paper](https://arxiv.org/abs/2405.11874).
+
 ## :sparkles: Overview
 <div align="center">
     <img src="./assets/framework.jpg" alt="xFinder" width="93%">
@@ -60,9 +63,6 @@ We summarize our primary contributions as follows:
 </div>
 
 > As shown in the figure, instances where evaluation frameworks such as LM Eval Harness and OpenCompass failed to extract key answers are illustrated. Specifically, A/T/C/M represent tasks with alphabet / short text / categorical label / math options, respectively.
-
-## :loudspeaker: News
-- [2024/05] We released xFinder: Robust and Pinpoint Answer Extraction for Large Language Models. Check out the [paper](https://arxiv.org/abs/2405.11874).
 
 ## :zap: Quick Start
 1. **Ensure Compatibility**: Ensure you have Python 3.10.0+.
