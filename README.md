@@ -61,6 +61,9 @@ We summarize our primary contributions as follows:
 
 > As shown in the figure, instances where evaluation frameworks such as LM Eval Harness and OpenCompass failed to extract key answers are illustrated. Specifically, A/T/C/M represent tasks with alphabet / short text / categorical label / math options, respectively.
 
+## :loudspeaker: News
+- [2024/05] We released xFinder: Robust and Pinpoint Answer Extraction for Large Language Models. Check out the [paper](https://arxiv.org/abs/2405.11874).
+
 ## :zap: Quick Start
 1. **Ensure Compatibility**: Ensure you have Python 3.10.0+.
 2. **Prepare QA pairs & LLM Outputs**: Prepare the LLM outputs that you want to evaluate. 
@@ -126,6 +129,14 @@ We demonstrate instances across four types of questions where RegEx fails to ext
     "xFinder_output": "9",
 }
 ```
+## :trophy: Results of Extraction Accuracy
+We evaluated their accuracy in extracting key answers from both the KAF test set and generalization sets. The results were compared against mainstream evaluation frameworks that utilize RegEx methods.
+<div align="center">
+    <img src="./assets/test-result.png" alt="xFinder" width="93%">
+</div>
+<div align="center">
+    <img src="./assets/generalization-result.png" alt="xFinder" width="93%">
+</div>
 
 ## :memo: Citation
 ```
