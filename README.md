@@ -37,7 +37,9 @@
 <div align="center"><h5>For business inquiries, please contact us at <a href="mailto:lizy@iaar.ac.cn">lizy@iaar.ac.cn</a>.</h5></div>
 
 <div align="center">
+
 English | [简体中文](README_zh-CN.md)
+
 </div>
 
 > \[!IMPORTANT\]
