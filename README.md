@@ -72,11 +72,12 @@ We summarize our primary contributions as follows:
 
 ## :zap: Quick Start
 1. **Ensure Compatibility**: Ensure you have Python 3.10.0+.
-2. **Prepare QA pairs & LLM Outputs**: Prepare the LLM outputs that you want to evaluate. 
+2. **Create Benchmark Dataset**: To facilitate the evaluation of benchmark datasets using xFinder, we have standardized various mainstream benchmark datasets into a unified JSON format. For details, see [create_benchmark_dataset.py](./scripts/dataset_construction/create_benchmark_dataset.py). Additionally, if you want to use xFinder to evaluate your own datasets, you can refer to the provided script template [benchmark_dataset_template.py](./scripts/dataset_construction/benchmark_dataset_template.py) for format conversion.
+3. **Prepare QA pairs & LLM Outputs**: Prepare the LLM outputs that you want to evaluate. 
    - provide a `.json` file including original question, key answer type (alphabet / short_text / categorical_label / math), LLM output, standard answer range.
    - For a detailed example of the expected format, refer to [`demo/example.json`](demo/example.json).
-3. **Deploy the xFinder Model**: Choose between two models for deployment, [xFinder-qwen1505](https://huggingface.co/IAAR-Shanghai/xFinder-qwen1505) or [xFinder-llama38it](https://huggingface.co/IAAR-Shanghai/xFinder-llama38it).
-4. **Finish Configuration**: Compile the above details into a configuration file. For configuration details, see [`demo\xfinder_config.yaml`](demo/xfinder_config.yaml).
+4. **Deploy the xFinder Model**: Choose between two models for deployment, [xFinder-qwen1505](https://huggingface.co/IAAR-Shanghai/xFinder-qwen1505) or [xFinder-llama38it](https://huggingface.co/IAAR-Shanghai/xFinder-llama38it).
+5. **Finish Configuration**: Compile the above details into a configuration file. For configuration details, see [`demo\xfinder_config.yaml`](demo/xfinder_config.yaml).
 
 After setting up the configuration file, you have two methods to proceed with the evaluation:
 
@@ -98,6 +99,8 @@ After setting up the configuration file, you have two methods to proceed with th
 >>> from xfinder.eval import calc_acc
 >>> calc_acc($PATH_TO_CONFIG)
 ```
+
+Note: We provide scripts for fine-tuning xFinder in [xfinder_training](./scripts/xfinder_training/).
 
 ## :sun_with_face: Examples: RegEx vs. xFinder
 We demonstrate instances across four types of questions where RegEx fails to extract or frequently extracts incorrect answers, whereas xFinder accurately extracts the key answers.

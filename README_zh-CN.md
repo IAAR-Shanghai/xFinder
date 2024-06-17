@@ -73,11 +73,12 @@
 
 ## :zap: 快速上手
 1. **配置环境**：确保您有Python 3.10.0以上的版本。
-2. **准备QA对和LLM的输出**：准备您所要评估的LLM输出。
+2. **创建基准数据集**：为了便于使用xFinder对基准数据集进行评测，我们将现有的主流基准数据集统一格式化为JSON格式。具体内容见 [create_benchmark_dataset.py](./scripts/dataset_construction/create_benchmark_dataset.py)。此外，如果你想使用xFinder对自有的数据集进行评测，可以参考提供的脚本模板 [benchmark_dataset_template.py](./scripts/dataset_construction/benchmark_dataset_template.py) 进行格式转换。
+3. **准备QA对和LLM的输出**：准备您所要评估的LLM输出。
     - 请提供一个`.json`文件，包括原始问题、关键答案类型（字母题/短文本题/分类标签题/数学题）、LLM输出、标准答案范围。
     - 有关json文件内容格式的详细示例，请参阅[`demo/example.json`](demo/example.json)。
-3. **部署xFinder模型**：选择[xFinder-qwen1505](https://huggingface.co/IAAR-Shanghai/xFinder-qwen1505)或[xFinder-llama38it](https://huggingface.co/IAAR-Shanghai/xFinder-llama38it)两个模型之一进行部署。
-4. **完成配置**：将上述详细信息汇总到一个配置文件中。有关配置文件的详细信息，请参阅[`demo\xfinder_config.yaml`](demo/xfinder_config.yaml)。
+4. **部署xFinder模型**：选择[xFinder-qwen1505](https://huggingface.co/IAAR-Shanghai/xFinder-qwen1505)或[xFinder-llama38it](https://huggingface.co/IAAR-Shanghai/xFinder-llama38it)两个模型之一进行部署。
+5. **完成配置**：将上述详细信息汇总到一个配置文件中。有关配置文件的详细信息，请参阅[`demo\xfinder_config.yaml`](demo/xfinder_config.yaml)。
 
 在设置完配置文件后，您可以通过两种方法进行评估：
 
@@ -99,6 +100,8 @@
 >>> from xfinder.eval import calc_acc
 >>> calc_acc($PATH_TO_CONFIG)
 ```
+
+备注：我们在 [xfinder_training](./scripts/xfinder_training/) 中提供了用于微调 xFinder 的脚本。
 
 ## :sun_with_face: 示例: RegEx vs. xFinder
 我们对于四个类型的问题分别展示了一个RegEx提取错误、而xFinder能够提取正确的实例，如下。
