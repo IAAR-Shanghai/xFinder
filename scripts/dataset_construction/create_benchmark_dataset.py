@@ -10,8 +10,8 @@ from sklearn.model_selection import train_test_split
 RANDOM_SEED = 22
 random.seed(RANDOM_SEED)
 
-INPUT_DIR = 'raw_data'
-OUTPUT_DIR = 'transformed_data'
+INPUT_DIR = './benchmark/raw_data'
+OUTPUT_DIR = './benchmark/transformed_data'
 
 
 def generate_random_text():

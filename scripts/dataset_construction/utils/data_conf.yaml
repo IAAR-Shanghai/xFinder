@@ -1,0 +1,340 @@
+GSM8K:
+    data_name: GSM8K
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: math problems
+    task_description: "Please answer the above question"
+
+MATH:
+    data_name: MATH
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 1974
+        - 986
+    task_type: math problems
+    task_description: "Please answer the above question"
+
+ARC-c_alpha:
+    data_name: ARC-c_alpha
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 1391
+        - 983
+    task_type: commonsense reasoning
+    task_description: "Please choose the answer from options A to D, corresponding to the question."
+
+ARC-e_alpha:
+    data_name: ARC-e_alpha
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: commonsense reasoning
+    task_description: "Please choose the answer from options A to D, corresponding to the question."
+
+MMLU_alpha:
+    data_name: MMLU_alpha
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: natural language understanding
+    task_description: "Please choose the answer from options A to D, corresponding to the question."
+
+ARC-c_text:
+    data_name: ARC-c_text
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 1391
+        - 1000
+    task_type: commonsense reasoning
+    task_description: "Please choose the answer from {options}, corresponding to the question."
+
+ARC-e_text:
+    data_name: ARC-e_text
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: commonsense reasoning
+    task_description: "Please choose the answer from {options}, corresponding to the question."
+
+MMLU_text:
+    data_name: MMLU_text
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: natural language understanding
+    task_description: "Please choose the answer from {options}, corresponding to the question."
+
+AgNews:
+    data_name: AgNews
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: topic classification
+    task_description: "Please choose the answer from World / Sports / Business / Technology, corresponding to the question."
+
+Amazon:
+    data_name: Amazon
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: sentiment analysis
+    task_description: "Please choose the answer from positive / negative, corresponding to the question."
+
+DBPedia:
+    data_name: DBPedia
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: topic classification
+    task_description: "Please choose the answer from Company / School / Artist / Athlete / Politician / Transportation / Building / Nature / Village / Animal / Plant / Album / Film / Book, corresponding to the question."
+
+Subj:
+    data_name: Subj
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: sentiment analysis
+    task_description: "Please choose the answer from subjective / objective, corresponding to the question."
+
+QNLI:
+    data_name: QNLI
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: natural language inference
+    task_description: "Please choose the answer from True / False, corresponding to the question."
+
+CommonsenseQA_alpha:
+    data_name: CommonsenseQA_alpha
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: commonsense reasoning
+    task_description: "Please choose the answer from options A to E, corresponding to the question."
+
+CommonsenseQA_text:
+    data_name: CommonsenseQA_text
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: commonsense reasoning
+    task_description: "Please choose the answer from {options}, corresponding to the question."
+
+SST2:
+    data_name: SST2
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: sentiment analysis
+    task_description: "Please choose the answer from positive / negative, corresponding to the question."
+
+SST5:
+    data_name: SST5
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: sentiment analysis
+    task_description: "Please choose the answer from positive / positive / neutral / negative / very negative, corresponding to the question."
+
+MR:
+    data_name: MR
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: sentiment analysis
+    task_description: "Please choose the answer from positive / negative, corresponding to the question."
+
+MetaMathQA:
+    data_name: MetaMathQA
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: math problems
+    task_description: "Please answer the above question"
+
+OpenbookQA_alpha:
+    data_name: OpenbookQA_alpha
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 500
+    task_type: commonsense reasoning
+    task_description: "Please choose the answer from options A to D, corresponding to the question."
+
+OpenbookQA_text:
+    data_name: OpenbookQA_text
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 500
+    task_type: commonsense reasoning
+    task_description: "Please choose the answer from {options}, corresponding to the question."
+
+SIQA_alpha:
+    data_name: SIQA_alpha
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: commonsense reasoning
+    task_description: "Please choose the answer from options A to C, corresponding to the question."
+
+SIQA_text:
+    data_name: SIQA_text
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: commonsense reasoning
+    task_description: "Please choose the answer from {options}, corresponding to the question."
+
+TREC:
+    data_name: TREC
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 1000
+        - 500
+    task_type: topic classification
+    task_description: "Please choose the answer from Abbreviation / Entity / Description / Person / Location / Number, corresponding to the question."
+
+BoolQ:
+    data_name: BoolQ
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: natural language inference
+    task_description: "Please choose the answer from Yes / No, corresponding to the question."
+
+WiC:
+    data_name: WiC
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 638
+    task_type: natural language inference
+    task_description: "Please choose the answer from True / False, corresponding to the question."
+
+hellaswag_alpha:
+    data_name: hellaswag_alpha
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: commonsense reasoning
+    task_description: "Please choose the answer from options A to D, corresponding to the question."
+
+ARC-c_enh:
+    data_name: ARC-c_enh
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 1391
+        - 1000
+    task_type: commonsense reasoning
+    task_description: "Please choose the answer from options {options}, corresponding to the question."
+
+ARC-e_enh:
+    data_name: ARC-e_enh
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: commonsense reasoning
+    task_description: "Please choose the answer from options {options}, corresponding to the question."
+
+MMLU_enh:
+    data_name: MMLU_enh
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 2000
+        - 1000
+    task_type: natural language understanding
+    task_description: "Please choose the answer from options {options}, corresponding to the question."
+
+MultiArith:
+    data_name: MultiArith
+    file_name:
+        - train.json
+        - test.json
+    data_num:
+        - 420
+        - 180
+    task_type: math problems
+    task_description: "Please answer the above question"

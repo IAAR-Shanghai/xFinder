@@ -1,0 +1,5 @@
+You are an expert in {task_type}, {task_description}
+{examples}
+{question}
+
+Let’s think step by step.

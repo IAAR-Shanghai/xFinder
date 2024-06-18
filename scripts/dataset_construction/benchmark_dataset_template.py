@@ -8,8 +8,8 @@ import pandas as pd
 RANDOM_SEED = 22
 random.seed(RANDOM_SEED)
 
-INPUT_DIR = 'raw_data'
-OUTPUT_DIR = 'transformed_data'
+INPUT_DIR = './benchmark/raw_data'
+OUTPUT_DIR = './benchmark/transformed_data'
 
 
 def process_row(row, dataset=None, answer_type=None):
