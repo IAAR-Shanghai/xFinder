@@ -47,6 +47,7 @@
 > 🌟 **Star Us!** 通过在GitHub上star我们的项目，您可以收到本项目的所有更新信息和内容。感谢您的支持！
 
 ## :loudspeaker: 更新
+- **[2024/08]** 我们更新了xFinder：现在[模型](https://huggingface.co/collections/IAAR-Shanghai/xfinder-664b7b21e94e9a93f25a8412)支持同时处理英文和中文
 - **[2024/05]** 我们发布了论文xFinder: Robust and Pinpoint Answer Extraction for Large Language Models。具体内容请阅读[论文](https://arxiv.org/abs/2405.11874).
 
 ## :sparkles: 总览

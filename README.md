@@ -47,6 +47,7 @@ English | [简体中文](README_zh-CN.md)
 > 🌟 **Star Us!** By starring our project on GitHub, you'll receive all release notifications instantly. Thank you for your support!
 
 ## :loudspeaker: News
+- **[2024/08]** We updated xFinder: The [model](https://huggingface.co/collections/IAAR-Shanghai/xfinder-664b7b21e94e9a93f25a8412) now supports processing both English and Chinese.
 - **[2024/05]** We released xFinder: Robust and Pinpoint Answer Extraction for Large Language Models. Check out the [paper](https://arxiv.org/abs/2405.11874).
 
 ## :sparkles: Overview
