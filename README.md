@@ -42,9 +42,14 @@ English | [简体中文](README_zh-CN.md)
 
 </div>
 
+**🎯 Who Should Pay Attention to Our Work?**
+
+- **If you are developing a Benchmark**, you can use our xFinder to replace traditional RegEx methods for extracting key answers from LLM responses. This will help you improve the accuracy of your evaluation results, enabling more reliable and meaningful comparisons and validation of model performance.
+- **If you are a designer of evaluation frameworks**, you can integrate our xFinder into your framework's answer extraction component to enhance the robustness and reliability of the evaluation process.
+
 > \[!IMPORTANT\]
 >
-> 🌟 **Star Us!** By starring our project on GitHub, you'll receive all release notifications instantly. Thank you for your support!
+> 🌟 **Star Us!** By starring our project on GitHub, you'll receive all release notifications instantly. We appreciate your support!
 
 ## :loudspeaker: News
 - **[2024/08]** We updated xFinder: The [model](https://huggingface.co/collections/IAAR-Shanghai/xfinder-664b7b21e94e9a93f25a8412) now supports processing both English and Chinese.
