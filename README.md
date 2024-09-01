@@ -179,10 +179,6 @@ We evaluated their accuracy in extracting key answers from both the KAF test set
 
 </details>
 
-<p align="right"><a href="#top">🔝Back to top</a></p>
-
-
-
 ## :star: Star Trends
 
 <a href="https://star-history.com/#IAAR-Shanghai/xFinder&Date">
@@ -192,3 +188,5 @@ We evaluated their accuracy in extracting key answers from both the KAF test set
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=IAAR-Shanghai/xFinder&type=Date" />
  </picture>
 </a>
+
+<p align="right"><a href="#top">🔝Back to top</a></p>
