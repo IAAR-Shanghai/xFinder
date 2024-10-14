@@ -1,12 +1,16 @@
 import ast
 from typing import List, Tuple, Union
 
-from tqdm import tqdm
-
-from ..utils import MathEvaluator
+from ..helpers import MathEvaluator
 
 
 class Comparator:
+    """
+    Comparator class for comparing extracted answers with correct answers.
+
+    Attributes:
+        math_evaluator (MathEvaluator): An instance of MathEvaluator class.
+    """
 
     def __init__(self):
         self.math_evaluator = MathEvaluator()
@@ -15,10 +19,10 @@ class Comparator:
         self, ext_cor_pair: Tuple[str, Union[str, list], str, str]
     ) -> List[Union[str, int]]:
         """Compare the extracted answer with the correct answer. Return a list of the comparison result.
-        
+
         Args:
             ext_cor_pair (Tuple[str, Union[str, list], str, str]): A tuple of the extracted answer, correct answer, and the key answer type.
-        
+
         Returns:
             List[Union[str, int]]: A list of the comparison result.
         """
@@ -38,14 +42,8 @@ class Comparator:
                         standard_answer_range)
                 for option in standard_answer_range_list:
                     if option[0] == correct and \
-                        extracted.strip().rstrip(".").lower() == option[1].strip().rstrip(".").lower():
+                            extracted.strip().rstrip(".").lower() == option[1].strip().rstrip(".").lower():
                         right_flag = 1
                         break
 
         return [*ext_cor_pair, right_flag]
-
-    def compare_all(self, ext_cor_pairs):
-        results = []
-        for ext_cor_pair in ext_cor_pairs:
-            results.append(self.compare(ext_cor_pair))
-        return results

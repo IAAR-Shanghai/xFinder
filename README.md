@@ -36,11 +36,6 @@
 
 <div align="center"><h5>For business inquiries, please contact us at <a href="mailto:lizy@iaar.ac.cn">lizy@iaar.ac.cn</a>.</h5></div>
 
-<div align="center">
-
-English | [简体中文](README_zh-CN.md)
-
-</div>
 
 **🎯 Who Should Pay Attention to Our Work?**
 
@@ -83,28 +78,74 @@ We summarize our primary contributions as follows:
    - provide a `.json` file including original question, key answer type (alphabet / short_text / categorical_label / math), LLM output, standard answer range.
    - For a detailed example of the expected format, refer to [`demo/example.json`](demo/example.json).
 4. **Deploy the xFinder Model**: Choose between two models for deployment, [xFinder-qwen1505](https://huggingface.co/IAAR-Shanghai/xFinder-qwen1505) or [xFinder-llama38it](https://huggingface.co/IAAR-Shanghai/xFinder-llama38it).
-5. **Finish Configuration**: Compile the above details into a configuration file. For configuration details, see [`demo\xfinder_config.yaml`](demo/xfinder_config.yaml).
 
-After setting up the configuration file, you have two methods to proceed with the evaluation:
+- ## :zap: Quick Start
+1. **Ensure Compatibility**: Ensure you have Python 3.10.0+.
+2. **Create Benchmark Dataset**: To facilitate the evaluation of benchmark datasets using xFinder, we have standardized various mainstream benchmark datasets into a unified JSON format. For details, see [create_benchmark_dataset.py](./scripts/dataset_construction/create_benchmark_dataset.py). Additionally, if you want to use xFinder to evaluate your own datasets, you can refer to the provided script template [benchmark_dataset_template.py](./scripts/dataset_construction/benchmark_dataset_template.py) for format conversion.
+3. **Prepare QA pairs & LLM Outputs**: Prepare the LLM outputs that you want to evaluate. 
+   - provide a `.json` file including original question, key answer type (alphabet / short_text / categorical_label / math), LLM output, standard answer range.
+   - For a detailed example of the expected format, refer to [`demo/example.json`](demo/example.json).
+4. **Deploy the xFinder Model**: Choose between two models for deployment, [xFinder-qwen1505](https://huggingface.co/IAAR-Shanghai/xFinder-qwen1505) or [xFinder-llama38it](https://huggingface.co/IAAR-Shanghai/xFinder-llama38it).
 
-**1. Use with install:**
-```bash
-> git clone  git@github.com:IAAR-Shanghai/xFinder.git
-> cd xFinder
-> conda create -n xfinder_env python=3.11 -y
-> conda activate xfinder_env
-> pip install -e .
-> xfinder $PATH_TO_CONFIG
 ```
-**2. Use without install:**
-```bash
-> git clone  git@github.com:IAAR-Shanghai/xFinder.git
-> cd xFinder
-> pip install -r requirements.txt
-> python
->>> from xfinder.eval import calc_acc
->>> calc_acc($PATH_TO_CONFIG)
+conda create -n xfinder_env python=3.10 -y
+conda activate xfinder_env
+pip install xfinder
 ```
+
+<details> <summary>Evaluating a Single Question</summary>
+To evaluate a single QA pair using the Evaluator class, follow the example code below. This demonstrates how to initialize the Evaluator and evaluate a sample question.
+
+```
+from xfinder.modules.eval import Evaluator
+
+# Initialize the Evaluator instance
+evaluator = Evaluator(
+    model_name="xFinder-qwen1505",       # Model name for inference
+    inference_mode="local",              # Inference mode ('local' or 'api')
+    model_path_or_url="IAAR-Shanghai/xFinder-qwen1505",  # Path or URL of the model
+)
+
+# Define a single evaluation question
+question = "What is the capital of France?"
+llm_output = "The capital of France is Paris."
+standard_answer_range = ["Paris", "Lyon", "Marseille"]  # Acceptable answers
+key_answer_type = "short_text"                          # Answer type
+correct_answer = "Paris"
+
+# Evaluate the single question
+result = evaluator.evaluate_single_example(
+    question,
+    llm_output,
+    standard_answer_range,
+    key_answer_type,
+    correct_answer
+)
+print(f"Single example evaluation result: {result}")
+```
+</details> 
+
+<details> <summary>Evaluating an Entire Dataset</summary>
+To evaluate multiple QA pairs, you can use a dataset formatted as a JSON file. Below is an example demonstrating how to evaluate an entire dataset.
+
+```
+from xfinder.modules.eval import Evaluator
+import importlib.resources as pkg_resources
+from xfinder import examples
+
+# Initialize the Evaluator instance
+evaluator = Evaluator(
+    model_name="xFinder-qwen1505",
+    inference_mode="local",
+    model_path_or_url="IAAR-Shanghai/xFinder-qwen1505",
+)
+
+# Evaluate the entire dataset
+data_path = "/data/to/path/dataset.json"
+accuracy = evaluator.evaluate(data_path)
+print(f"Accuracy for the dataset: {accuracy}")
+```
+</details>
 
 Note: We provide scripts for fine-tuning xFinder in [xfinder_training](./scripts/xfinder_training/).
 

@@ -1,7 +1,8 @@
-vllm==0.3.2
+vllm==0.6.2
 torch>=2.0.1
 transformers>=4.39.0
 tqdm>=4.65.0
+huggingface_hub
 einops
 accelerate
 tiktoken

@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "xfinder"
+version = "0.1.1"
+dependencies = [
+  "vllm==0.6.2",
+  "torch>=2.0.1",
+  "transformers>=4.39.0",
+  "tqdm>=4.65.0",
+  "huggingface_hub",
+  "einops",
+  "accelerate",
+  "tiktoken",
+  "ninja",
+]
+description = "An Robust and Pinpoint Answer Extractor for LLM Evaluation"
+authors = [
+  { name = "Qingchen Yu", email = "zhgqcyu@gmail.com" },
+]
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+keywords = ["LLM", "NLP", "answer extraction", "reliable evaluation"]
+classifiers = [
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
+]
+
+
+[project.urls]
+Repository = "https://github.com/IAAR-Shanghai/xFinder"
+
+[project.optional-dependencies]
+all = [
+  "vllm", "torch", "transformers", "tqdm", "huggingface_hub", "einops", "accelerate", "tiktoken", "ninja"
+]
+
+[project.scripts]
+xfinder-run-example = "xfinder.eval:main"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.targets.sdist]
+exclude = ["/scripts", "/CITATION.bib", "demo.ipynb"]
