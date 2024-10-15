@@ -2,33 +2,33 @@
 <img src="./assets/xfinder_logo.png" alt="xFinder_logo" width=23px>xFinder: Robust and Pinpoint Answer Extraction for Large Language Models</h2></div>
 
 <p align="center">
-    <!-- arXiv badge in a more professional tone -->
+    <!-- arXiv badge with a more vibrant academic red -->
     <a href="https://arxiv.org/abs/2405.11874">
-        <img src="https://img.shields.io/badge/arXiv-Paper-D14836?style=flat-square&logo=arxiv&logoColor=white">
+        <img src="https://img.shields.io/badge/arXiv-Paper-B31B1B?style=flat-square&logo=arxiv&logoColor=white">
     </a>
-    <!-- Github badge with clean design and a subtle contrast -->
+    <!-- Github badge with clean dark color -->
     <a href="https://github.com/IAAR-Shanghai/xFinder">
-        <img src="https://img.shields.io/badge/Github-Code-24292E?style=flat-square&logo=github&logoColor=white">
+        <img src="https://img.shields.io/badge/Github-Code-181717?style=flat-square&logo=github&logoColor=white">
     </a>
-    <!-- PyPI package badge with slightly bolder color -->
+    <!-- PyPI package badge with a slightly bolder color -->
     <a href="https://pypi.org/project/xfinder/">
-        <img src="https://img.shields.io/badge/PyPI-Package-306998?style=flat-square&logo=pypi&logoColor=white">
+        <img src="https://img.shields.io/badge/PyPI-Package-3775A9?style=flat-square&logo=pypi&logoColor=white">
     </a>
     <br>
-    <!-- Huggingface Collection badge with a vivid orange tone -->
+    <!-- Huggingface Collection badge with more dynamic orange -->
     <a href="https://huggingface.co/collections/IAAR-Shanghai/xfinder-664b7b21e94e9a93f25a8412">
-        <img src="https://img.shields.io/badge/Huggingface-Collection-FF8C00?style=flat-square&logo=huggingface&logoColor=white">
+        <img src="https://img.shields.io/badge/Huggingface-Collection-FF6F00?style=flat-square&logo=huggingface&logoColor=white">
     </a>
-    <!-- KAF Dataset badge using consistent design -->
+    <!-- KAF Dataset badge consistent with the above color scheme -->
     <a href="https://huggingface.co/datasets/IAAR-Shanghai/KAF-Dataset">
-        <img src="https://img.shields.io/badge/Huggingface-KAF%20Dataset-FF8C00?style=flat-square&logo=huggingface&logoColor=white">
+        <img src="https://img.shields.io/badge/Huggingface-KAF%20Dataset-FF6F00?style=flat-square&logo=huggingface&logoColor=white">
     </a>
-    <!-- Model badges with a brighter but balanced color scheme -->
+    <!-- Model badges with a balanced but dynamic color scheme -->
     <a href="https://huggingface.co/IAAR-Shanghai/xFinder-qwen1505">
-        <img src="https://img.shields.io/badge/Model-0.5B-FF8C00?style=flat-square&logo=huggingface&logoColor=white">
+        <img src="https://img.shields.io/badge/Model-0.5B-FF6F00?style=flat-square&logo=huggingface&logoColor=white">
     </a>
     <a href="https://huggingface.co/IAAR-Shanghai/xFinder-llama38it">
-        <img src="https://img.shields.io/badge/Model-8B-FF8C00?style=flat-square&logo=huggingface&logoColor=white">
+        <img src="https://img.shields.io/badge/Model-8B-FF6F00?style=flat-square&logo=huggingface&logoColor=white">
     </a>
 </p>
 
@@ -59,10 +59,11 @@
 > 🌟 **Star Us!** By starring our project on GitHub, you'll receive all release notifications instantly. We appreciate your support!
 
 ## :loudspeaker: News
+- **[2024/10]** We have open-sourced the KAF-Dataset and released xFinder as a PyPI package.
 - **[2024/08]** We updated xFinder: The [model](https://huggingface.co/collections/IAAR-Shanghai/xfinder-664b7b21e94e9a93f25a8412) now supports processing both English and Chinese.
 - **[2024/05]** We released xFinder: Robust and Pinpoint Answer Extraction for Large Language Models. Check out the [paper](https://arxiv.org/abs/2405.11874).
 
-## :sparkles: Overview
+## Overview
 <div align="center">
     <img src="./assets/framework.jpg" alt="xFinder" width="93%">
 </div>
@@ -83,7 +84,7 @@ We summarize our primary contributions as follows:
 
 > As shown in the figure, instances where evaluation frameworks such as LM Eval Harness and OpenCompass failed to extract key answers are illustrated. Specifically, A/T/C/M represent tasks with alphabet / short text / categorical label / math options, respectively.
 
-- ## :zap: Quick Start
+## Quick Start
 1. **Ensure Compatibility**: Ensure you have Python 3.10.0+.
 2. **Create Benchmark Dataset**: To facilitate the evaluation of benchmark datasets using xFinder, we have standardized various mainstream benchmark datasets into a unified JSON format. For details, see [create_benchmark_dataset.py](./scripts/dataset_construction/create_benchmark_dataset.py). Additionally, if you want to use xFinder to evaluate your own datasets, you can refer to the provided script template [benchmark_dataset_template.py](./scripts/dataset_construction/benchmark_dataset_template.py) for format conversion.
 3. **Prepare QA pairs & LLM Outputs**: Prepare the LLM outputs that you want to evaluate. 
@@ -91,6 +92,7 @@ We summarize our primary contributions as follows:
    - For a detailed example of the expected format, refer to [`demo/example.json`](demo/example.json).
 4. **Deploy the xFinder Model**: Choose between two models for deployment, [xFinder-qwen1505](https://huggingface.co/IAAR-Shanghai/xFinder-qwen1505) or [xFinder-llama38it](https://huggingface.co/IAAR-Shanghai/xFinder-llama38it).
 
+Once the xFinder model is deployed, you can proceed with the following steps to run an evaluation example:
 ```bash
 # Install xfinder
 conda create -n xfinder_env python=3.10 -y
@@ -106,7 +108,7 @@ pip install xfinder
 > - xFinder currently supports loading via the API method deployed by [vllm](https://docs.vllm.ai/en/v0.6.0/getting_started/quickstart.html)
 > - We provide scripts for fine-tuning xFinder in [xfinder_training](./scripts/xfinder_training/).
 
-## :sun_with_face: Examples: RegEx vs. xFinder
+## Examples: RegEx vs. xFinder
 We demonstrate instances across four types of questions where RegEx fails to extract or frequently extracts incorrect answers, whereas xFinder accurately extracts the key answers.
 ```json
 {
@@ -142,7 +144,7 @@ We demonstrate instances across four types of questions where RegEx fails to ext
     "xFinder_output": "9",
 }
 ```
-## :trophy: Results of Extraction Accuracy
+## Results of Extraction Accuracy
 **Baseline**: OpenCompass, LM Eval Harness, UltraEval, GPT-4.
 **Our Method**: xFinder-qwen1505, xFinder-qwen1518, xFinder-gemma7, xFinder-chatglm36base, xFinder-llama38, xFinder-llama38it.
 
@@ -154,7 +156,7 @@ We evaluated their accuracy in extracting key answers from both the KAF test set
     <img src="./assets/generalization-result.png" alt="xFinder" width="93%">
 </div>
 
-## :memo: Citation
+## Citation
 ```
 @article{xFinder,
       title={xFinder: Robust and Pinpoint Answer Extraction for Large Language Models}, 
@@ -164,7 +166,7 @@ We evaluated their accuracy in extracting key answers from both the KAF test set
 }
 ```
 
-## :triangular_flag_on_post: TODOs
+## TODOs
 <details><summary>Click me to show all TODOs</summary>
 
 - [ ] feat: support quick replacement of RegEx in OpenCompass. 
@@ -175,7 +177,7 @@ We evaluated their accuracy in extracting key answers from both the KAF test set
 
 </details>
 
-## :star: Star Trends
+## Star Trends
 
 <a href="https://star-history.com/#IAAR-Shanghai/xFinder&Date">
  <picture>
