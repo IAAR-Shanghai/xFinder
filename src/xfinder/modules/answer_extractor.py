@@ -103,15 +103,14 @@ class Extractor:
         })
         headers = {'Content-Type': 'application/json'}
         try:
-            logging.info(
-                f"Attempting API request with prompt: {prompt[:50]}...")
+            logging.info(f"Attempting API request with prompt: {prompt[:50]}...")
             response = requests.post(
-                self.model_path_or_url, headers=headers, data=payload)
+                self.model_path_or_url, headers=headers, data=payload, timeout=(5, 10))  # Add timeout here
             response.raise_for_status()
-            res = response.json()
-            return self._extract_api_response(res, prompt)
+            res = response.json()['text'][0].replace(prompt, "").strip()
+            return res
         except requests.exceptions.HTTPError as e:
-            logging.error(f"HTTP error occurred: {e}")
+            logging.error(f"HTTP error occurred: {e.response.status_code} - {e.response.text}")
             raise
         except requests.exceptions.ConnectionError as e:
             logging.error(f"Connection error occurred: {e}")
@@ -119,12 +118,6 @@ class Extractor:
         except requests.RequestException as e:
             logging.error(f"Request error occurred: {e}")
             raise
-
-    def _extract_api_response(self, res: Dict[str, Any], prompt: str) -> str:
-        if 'choices' not in res or not isinstance(res['choices'], list) or len(res['choices']) == 0:
-            logging.error(f"Unexpected API response format: {res}")
-            raise ValueError("Unexpected API response format")
-        return res['choices'][0]['text'].replace(prompt, "").strip()
 
     def _execute_local_inference(self, query: Dict[str, Any]) -> str:
         prompt = self.create_formatted_prompt(query)

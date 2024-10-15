@@ -4,17 +4,14 @@ build-backend = "hatchling.build"
 
 [project]
 name = "xfinder"
-version = "0.1.1"
+version = "0.2.0"
 dependencies = [
-  "vllm==0.6.2",
-  "torch>=2.0.1",
+  "torch==2.3.1",
   "transformers>=4.39.0",
   "tqdm>=4.65.0",
   "huggingface_hub",
-  "einops",
-  "accelerate",
-  "tiktoken",
-  "ninja",
+  "accelerate>=0.26.0",
+  "tenacity"
 ]
 description = "An Robust and Pinpoint Answer Extractor for LLM Evaluation"
 authors = [
@@ -34,11 +31,6 @@ classifiers = [
 
 [project.urls]
 Repository = "https://github.com/IAAR-Shanghai/xFinder"
-
-[project.optional-dependencies]
-all = [
-  "vllm", "torch", "transformers", "tqdm", "huggingface_hub", "einops", "accelerate", "tiktoken", "ninja"
-]
 
 [project.scripts]
 xfinder-run-example = "xfinder.eval:main"

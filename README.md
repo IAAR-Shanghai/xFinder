@@ -2,31 +2,43 @@
 <img src="./assets/xfinder_logo.png" alt="xFinder_logo" width=23px>xFinder: Robust and Pinpoint Answer Extraction for Large Language Models</h2></div>
 
 <p align="center">
-    <!-- arxiv badges -->
+    <!-- arXiv badge in a more professional tone -->
     <a href="https://arxiv.org/abs/2405.11874">
-        <img src="https://img.shields.io/badge/Paper-red?style=flat&logo=arxiv">
+        <img src="https://img.shields.io/badge/arXiv-Paper-D14836?style=flat-square&logo=arxiv&logoColor=white">
     </a>
-    <!-- Github -->
+    <!-- Github badge with clean design and a subtle contrast -->
     <a href="https://github.com/IAAR-Shanghai/xFinder">
-        <img src="https://img.shields.io/badge/Code-black?style=flat&logo=github">
+        <img src="https://img.shields.io/badge/Github-Code-24292E?style=flat-square&logo=github&logoColor=white">
     </a>
-    <!-- hf collection -->
-    <a href="https://huggingface.co/collections/IAAR-Shanghai/xfinder-664b7b21e94e9a93f25a8412"><img src="https://img.shields.io/badge/-%F0%9F%A4%97%20Collection-orange?style=flat"/></a>
-    <!-- Model 0.5B -->
+    <!-- PyPI package badge with slightly bolder color -->
+    <a href="https://pypi.org/project/xfinder/">
+        <img src="https://img.shields.io/badge/PyPI-Package-306998?style=flat-square&logo=pypi&logoColor=white">
+    </a>
+    <br>
+    <!-- Huggingface Collection badge with a vivid orange tone -->
+    <a href="https://huggingface.co/collections/IAAR-Shanghai/xfinder-664b7b21e94e9a93f25a8412">
+        <img src="https://img.shields.io/badge/Huggingface-Collection-FF8C00?style=flat-square&logo=huggingface&logoColor=white">
+    </a>
+    <!-- KAF Dataset badge using consistent design -->
+    <a href="https://huggingface.co/datasets/IAAR-Shanghai/KAF-Dataset">
+        <img src="https://img.shields.io/badge/Huggingface-KAF%20Dataset-FF8C00?style=flat-square&logo=huggingface&logoColor=white">
+    </a>
+    <!-- Model badges with a brighter but balanced color scheme -->
     <a href="https://huggingface.co/IAAR-Shanghai/xFinder-qwen1505">
-        <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Model%20(0.5B)-orange?style=flat">
+        <img src="https://img.shields.io/badge/Model-0.5B-FF8C00?style=flat-square&logo=huggingface&logoColor=white">
     </a>
     <a href="https://huggingface.co/IAAR-Shanghai/xFinder-llama38it">
-        <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Model%20(8B)-orange?style=flat">
+        <img src="https://img.shields.io/badge/Model-8B-FF8C00?style=flat-square&logo=huggingface&logoColor=white">
     </a>
 </p>
+
 
 <div align="center">
     <p>
         <a href="https://github.com/Duguce">Qingchen Yu</a><sup>1,*</sup>, 
         <a href="https://github.com/fan2goa1">Zifan Zheng</a><sup>1,*</sup>, 
         <a href="https://github.com/Ki-Seki">Shichao Song</a><sup>2,*</sup>, 
-        <a>Zhiyu Li</a><sup>1,†</sup>, Feiyu Xiong<sup>1</sup>, Bo Tang<sup>1</sup>, <a href="https://github.com/hush-cd">Ding Chen</a><sup>1</sup>
+        Zhiyu Li<sup>1,†</sup>, Feiyu Xiong<sup>1</sup>, Bo Tang<sup>1</sup>, <a href="https://github.com/hush-cd">Ding Chen</a><sup>1</sup>
     </p>
     <p>
         <sup>1</sup><a href="https://www.iaar.ac.cn/">Institute for Advanced Algorithms Research, Shanghai</a>, <sup>2</sup><a href="https://en.ruc.edu.cn/">Renmin University of China</a>
@@ -71,14 +83,6 @@ We summarize our primary contributions as follows:
 
 > As shown in the figure, instances where evaluation frameworks such as LM Eval Harness and OpenCompass failed to extract key answers are illustrated. Specifically, A/T/C/M represent tasks with alphabet / short text / categorical label / math options, respectively.
 
-## :zap: Quick Start
-1. **Ensure Compatibility**: Ensure you have Python 3.10.0+.
-2. **Create Benchmark Dataset**: To facilitate the evaluation of benchmark datasets using xFinder, we have standardized various mainstream benchmark datasets into a unified JSON format. For details, see [create_benchmark_dataset.py](./scripts/dataset_construction/create_benchmark_dataset.py). Additionally, if you want to use xFinder to evaluate your own datasets, you can refer to the provided script template [benchmark_dataset_template.py](./scripts/dataset_construction/benchmark_dataset_template.py) for format conversion.
-3. **Prepare QA pairs & LLM Outputs**: Prepare the LLM outputs that you want to evaluate. 
-   - provide a `.json` file including original question, key answer type (alphabet / short_text / categorical_label / math), LLM output, standard answer range.
-   - For a detailed example of the expected format, refer to [`demo/example.json`](demo/example.json).
-4. **Deploy the xFinder Model**: Choose between two models for deployment, [xFinder-qwen1505](https://huggingface.co/IAAR-Shanghai/xFinder-qwen1505) or [xFinder-llama38it](https://huggingface.co/IAAR-Shanghai/xFinder-llama38it).
-
 - ## :zap: Quick Start
 1. **Ensure Compatibility**: Ensure you have Python 3.10.0+.
 2. **Create Benchmark Dataset**: To facilitate the evaluation of benchmark datasets using xFinder, we have standardized various mainstream benchmark datasets into a unified JSON format. For details, see [create_benchmark_dataset.py](./scripts/dataset_construction/create_benchmark_dataset.py). Additionally, if you want to use xFinder to evaluate your own datasets, you can refer to the provided script template [benchmark_dataset_template.py](./scripts/dataset_construction/benchmark_dataset_template.py) for format conversion.
@@ -87,71 +91,24 @@ We summarize our primary contributions as follows:
    - For a detailed example of the expected format, refer to [`demo/example.json`](demo/example.json).
 4. **Deploy the xFinder Model**: Choose between two models for deployment, [xFinder-qwen1505](https://huggingface.co/IAAR-Shanghai/xFinder-qwen1505) or [xFinder-llama38it](https://huggingface.co/IAAR-Shanghai/xFinder-llama38it).
 
-```
+```bash
+# Install xfinder
 conda create -n xfinder_env python=3.10 -y
 conda activate xfinder_env
 pip install xfinder
+
+# Run an evaluation example with xFinder
+!CUDA_VISIBLE_DEVICES=0 python -m xfinder.eval --run-example --model-name xFinder-qwen1505 --inference-mode local --model-path-or-url /path/to/anonymized/model/xFinder-qwen1505
 ```
-
-<details> <summary>Evaluating a Single Question</summary>
-To evaluate a single QA pair using the Evaluator class, follow the example code below. This demonstrates how to initialize the Evaluator and evaluate a sample question.
-
-```
-from xfinder.modules.eval import Evaluator
-
-# Initialize the Evaluator instance
-evaluator = Evaluator(
-    model_name="xFinder-qwen1505",       # Model name for inference
-    inference_mode="local",              # Inference mode ('local' or 'api')
-    model_path_or_url="IAAR-Shanghai/xFinder-qwen1505",  # Path or URL of the model
-)
-
-# Define a single evaluation question
-question = "What is the capital of France?"
-llm_output = "The capital of France is Paris."
-standard_answer_range = ["Paris", "Lyon", "Marseille"]  # Acceptable answers
-key_answer_type = "short_text"                          # Answer type
-correct_answer = "Paris"
-
-# Evaluate the single question
-result = evaluator.evaluate_single_example(
-    question,
-    llm_output,
-    standard_answer_range,
-    key_answer_type,
-    correct_answer
-)
-print(f"Single example evaluation result: {result}")
-```
-</details> 
-
-<details> <summary>Evaluating an Entire Dataset</summary>
-To evaluate multiple QA pairs, you can use a dataset formatted as a JSON file. Below is an example demonstrating how to evaluate an entire dataset.
-
-```
-from xfinder.modules.eval import Evaluator
-import importlib.resources as pkg_resources
-from xfinder import examples
-
-# Initialize the Evaluator instance
-evaluator = Evaluator(
-    model_name="xFinder-qwen1505",
-    inference_mode="local",
-    model_path_or_url="IAAR-Shanghai/xFinder-qwen1505",
-)
-
-# Evaluate the entire dataset
-data_path = "/data/to/path/dataset.json"
-accuracy = evaluator.evaluate(data_path)
-print(f"Accuracy for the dataset: {accuracy}")
-```
-</details>
-
-Note: We provide scripts for fine-tuning xFinder in [xfinder_training](./scripts/xfinder_training/).
+> \[!Tip\]
+> - Refer to [`demo.ipynb`](demo.ipynb) for more detailed examples.
+> - Run `export HF_ENDPOINT=https://hf-mirror.com` to use the Chinese mirror if you cannot connect to Hugging Face.
+> - xFinder currently supports loading via the API method deployed by [vllm](https://docs.vllm.ai/en/v0.6.0/getting_started/quickstart.html)
+> - We provide scripts for fine-tuning xFinder in [xfinder_training](./scripts/xfinder_training/).
 
 ## :sun_with_face: Examples: RegEx vs. xFinder
 We demonstrate instances across four types of questions where RegEx fails to extract or frequently extracts incorrect answers, whereas xFinder accurately extracts the key answers.
-```
+```json
 {
     "key_answer_type": "alphabet option",
     "question": "A man is seen playing guitar on a stage with others playing instruments behind him. The man grabs a guitar from the audience and begins playing both one after the other ...",
@@ -210,12 +167,10 @@ We evaluated their accuracy in extracting key answers from both the KAF test set
 ## :triangular_flag_on_post: TODOs
 <details><summary>Click me to show all TODOs</summary>
 
-- [ ] feat: customized configuration on attributes' names.
 - [ ] feat: support quick replacement of RegEx in OpenCompass. 
-- [ ] feat: support parallel (or offline batched) evaluation.
-- [ ] feat: demo deployment.
-- [ ] feat: API deployment.
-- [ ] codes: upload data construction pipeline codes.
+- [ ] feat: add additional example datasets to the xfinder PyPI package.
+- [ ] feat: add model loading methods.
+- [ ] docs: extend dataset construction documents.
 - [ ] docs: add video tutorial.
 
 </details>

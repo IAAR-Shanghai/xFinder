@@ -104,7 +104,7 @@ def run_example(model_name, inference_mode, model_path_or_url, temperature, max_
     llm_output = "The capital of France is Paris."
     standard_answer_range = "[\"Paris\", \"Lyon\", \"Marseille\"]"
     key_answer_type = "short_text"
-    correct_answer = "Lyon"
+    correct_answer = "Paris"
 
     # evaluate single example
     result = evaluator.evaluate_single_example(
