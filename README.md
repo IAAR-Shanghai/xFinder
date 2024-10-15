@@ -1,5 +1,5 @@
 <div align="center"><h2>
-<img src="./assets/xfinder_logo.png" alt="xFinder_logo" width=23px>xFinder: Robust and Pinpoint Answer Extraction for Large Language Models</h2></div>
+<img src="https://raw.githubusercontent.com/IAAR-Shanghai/xFinder/main/assets/xfinder_logo.png" alt="xFinder_logo" width=23px>xFinder: Robust and Pinpoint Answer Extraction for Large Language Models</h2></div>
 
 <p align="center">
     <!-- arXiv badge with a more vibrant academic red -->
@@ -65,7 +65,7 @@
 
 ## Overview
 <div align="center">
-    <img src="./assets/framework.jpg" alt="xFinder" width="93%">
+    <img src="https://raw.githubusercontent.com/IAAR-Shanghai/xFinder/main/assets/framework.jpg" alt="xFinder" width="93%">
 </div>
 
 <details><summary>Abstract</summary>
@@ -79,33 +79,88 @@ We summarize our primary contributions as follows:
 - In our extensive experiments, we demonstrate that RegEx-based evaluation methods are unreliable, while our xFinder model significantly improves reliability.
 
 <div align="center">
-    <img src="./assets/example.jpg" alt="xFinder" width="93%">
+    <img src="https://raw.githubusercontent.com/IAAR-Shanghai/xFinder/main/assets/example.jpg" alt="xFinder" width="93%">
 </div>
 
 > As shown in the figure, instances where evaluation frameworks such as LM Eval Harness and OpenCompass failed to extract key answers are illustrated. Specifically, A/T/C/M represent tasks with alphabet / short text / categorical label / math options, respectively.
 
 ## Quick Start
-1. **Ensure Compatibility**: Ensure you have Python 3.10.0+.
-2. **Create Benchmark Dataset**: To facilitate the evaluation of benchmark datasets using xFinder, we have standardized various mainstream benchmark datasets into a unified JSON format. For details, see [create_benchmark_dataset.py](./scripts/dataset_construction/create_benchmark_dataset.py). Additionally, if you want to use xFinder to evaluate your own datasets, you can refer to the provided script template [benchmark_dataset_template.py](./scripts/dataset_construction/benchmark_dataset_template.py) for format conversion.
-3. **Prepare QA pairs & LLM Outputs**: Prepare the LLM outputs that you want to evaluate. 
-   - provide a `.json` file including original question, key answer type (alphabet / short_text / categorical_label / math), LLM output, standard answer range.
-   - For a detailed example of the expected format, refer to [`demo/example.json`](demo/example.json).
-4. **Deploy the xFinder Model**: Choose between two models for deployment, [xFinder-qwen1505](https://huggingface.co/IAAR-Shanghai/xFinder-qwen1505) or [xFinder-llama38it](https://huggingface.co/IAAR-Shanghai/xFinder-llama38it).
+1. **Create Benchmark Dataset**: To streamline the evaluation process using xFinder, we have standardized various mainstream benchmark datasets into a unified JSON format. For implementation details, refer to [create_benchmark_dataset.py](./scripts/dataset_construction/create_benchmark_dataset.py). If you wish to evaluate your own datasets using xFinder, please refer to our provided script template [benchmark_dataset_template.py](./scripts/dataset_construction/benchmark_dataset_template.py) for format conversion guidance.
 
-Once the xFinder model is deployed, you can proceed with the following steps to run an evaluation example:
+2. **Prepare QA Pairs & LLM Outputs**: Gather the LLM outputs you wish to evaluate. Ensure your data includes the following elements:
+   - Original question
+   - Key answer type (options: alphabet, short_text, categorical_label, math)
+   - LLM output
+   - Standard answer range
+
+3. **Deploy the xFinder Model**: Select one of the following models for deployment:
+   - [xFinder-qwen1505](https://huggingface.co/IAAR-Shanghai/xFinder-qwen1505)
+   - [xFinder-llama38it](https://huggingface.co/IAAR-Shanghai/xFinder-llama38it)
+
+After deploying the xFinder model, follow these steps to run an evaluation:
+
 ```bash
 # Install xfinder
 conda create -n xfinder_env python=3.10 -y
 conda activate xfinder_env
 pip install xfinder
 
-# Run an evaluation example with xFinder
-!CUDA_VISIBLE_DEVICES=0 python -m xfinder.eval --run-example --model-name xFinder-qwen1505 --inference-mode local --model-path-or-url /path/to/anonymized/model/xFinder-qwen1505
+# Perform an evaluation with xFinder (a built-in example)
+CUDA_VISIBLE_DEVICES=0 python -m xfinder.eval --run-example --model-name xFinder-qwen1505 --inference-mode local --model-path-or-url /path/to/anonymized/model/xFinder-qwen1505
 ```
+
+#### 📊 xFinder supports two forms of evaluation
+<details><summary>📚 Batch Evaluation of Summarized Experimental Results
+
+This method allows you to evaluate multiple examples stored in a JSON file.</summary>
+
+```python
+# Initialize Evaluator object
+evaluator = Evaluator(
+    model_name="xFinder-qwen1505",   # Model name
+    inference_mode="api",            # Inference mode, 'local' or 'api'
+    model_path_or_url="http://your-anonymized-url/generate",  # Anonymized model path or URL
+)
+# Perform batch evaluation
+data_path = "/path/to/your/data/example.json"  # User needs to provide their own data path
+accuracy = evaluator.evaluate(data_path)
+
+print(f"Batch evaluation accuracy: {accuracy}")
+```
+</details>
+
+<details><summary>📄 Single-Instance Evaluation Mode
+
+This method allows you to evaluate individual examples, which can be integrated into a LLM evaluation framework.</summary>
+
+```python
+# Initialize Evaluator object
+evaluator = Evaluator(
+    model_name="xFinder-qwen1505",   # Model name
+    inference_mode="local",            # Inference mode, 'local' or 'api'
+    model_path_or_url="IAAR-Shanghai/xFinder-qwen1505",  # Anonymized model path or URL
+)
+# Define input for a single evaluation
+question = "What is the capital of France?"
+llm_output = "The capital of France is Paris."
+standard_answer_range = "[\"Paris\", \"Lyon\", \"Marseille\"]"
+key_answer_type = "short_text"
+correct_answer = "Paris"
+# Perform single example evaluation
+result = evaluator.evaluate_single_example(
+    question,
+    llm_output,
+    standard_answer_range,
+    key_answer_type,
+    correct_answer
+)
+```
+</details>
+
 > \[!Tip\]
 > - Refer to [`demo.ipynb`](demo.ipynb) for more detailed examples.
 > - Run `export HF_ENDPOINT=https://hf-mirror.com` to use the Chinese mirror if you cannot connect to Hugging Face.
-> - xFinder currently supports loading via the API method deployed by [vllm](https://docs.vllm.ai/en/v0.6.0/getting_started/quickstart.html)
+> - xFinder currently supports loading via the API method deployed by [vllm](https://docs.vllm.ai/en/v0.6.0/getting_started/quickstart.html).
 > - We provide scripts for fine-tuning xFinder in [xfinder_training](./scripts/xfinder_training/).
 
 ## Examples: RegEx vs. xFinder
@@ -150,10 +205,10 @@ We demonstrate instances across four types of questions where RegEx fails to ext
 
 We evaluated their accuracy in extracting key answers from both the KAF test set and generalization sets. The metric in the table is accuracy.
 <div align="center">
-    <img src="./assets/test-result.png" alt="xFinder" width="93%">
+    <img src="https://raw.githubusercontent.com/IAAR-Shanghai/xFinder/main/assets/test-result.png" alt="xFinder" width="93%">
 </div>
 <div align="center">
-    <img src="./assets/generalization-result.png" alt="xFinder" width="93%">
+    <img src="https://raw.githubusercontent.com/IAAR-Shanghai/xFinder/main/assets/generalization-result.png" alt="xFinder" width="93%">
 </div>
 
 ## Citation
