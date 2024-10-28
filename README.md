@@ -60,6 +60,7 @@
 
 ## :loudspeaker: News
 - **[2024/10]** We have open-sourced the KAF-Dataset and released xFinder as a PyPI package.
+- **[2024/09]** xFinder has been successfully integrated into [OpenCompass](https://github.com/open-compass/opencompass/blob/645c5f3b2ce36dae761850c648d2d0a45250c9ba/opencompass/utils/postprocessors/xfinder/README.md)! 🔥🔥🔥
 - **[2024/08]** We updated xFinder: The [model](https://huggingface.co/collections/IAAR-Shanghai/xfinder-664b7b21e94e9a93f25a8412) now supports processing both English and Chinese.
 - **[2024/05]** We released xFinder: Robust and Pinpoint Answer Extraction for Large Language Models. Check out the [paper](https://arxiv.org/abs/2405.11874).
 
