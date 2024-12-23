@@ -126,7 +126,7 @@ class Extractor:
         output_ids = self.model.generate(
             input_ids, max_new_tokens=self.max_tokens, temperature=self.temperature)
         response = self.tokenizer.decode(
-            output_ids[0], skip_special_tokens=True)
+            output_ids[0][input_ids.shape[1]:], skip_special_tokens=True)
         return response.replace(prompt, '').strip()
 
     def generate_output(self, question, llm_output, standard_answer_range) -> str:
