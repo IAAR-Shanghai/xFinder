@@ -40,6 +40,8 @@ class Comparator:
                 if type(standard_answer_range) == str:
                     standard_answer_range_list = ast.literal_eval(
                         standard_answer_range)
+                else:  
+                    standard_answer_range_list = standard_answer_range
                 for option in standard_answer_range_list:
                     if option[0] == correct and \
                             extracted.strip().rstrip(".").lower() == option[1].strip().rstrip(".").lower():
