@@ -4,14 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "xfinder"
-version = "0.2.4"
+version = "0.2.6"
 dependencies = [
   "torch==2.3.1",
   "transformers>=4.39.0",
   "tqdm>=4.65.0",
   "huggingface_hub",
   "accelerate>=0.26.0",
-  "tenacity"
+  "tenacity",
+  "ipywidgets"
 ]
 description = "An Robust and Pinpoint Answer Extractor for LLM Evaluation"
 authors = [

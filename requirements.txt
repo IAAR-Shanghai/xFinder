@@ -4,3 +4,4 @@ tqdm>=4.65.0
 accelerate>=0.26.0
 huggingface_hub
 tenacity
+ipywidgets
