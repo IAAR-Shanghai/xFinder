@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "xfinder"
 version = "0.2.6"
 dependencies = [
-  "torch==2.3.1",
+  "torch==2.8.0",
   "transformers>=4.39.0",
   "tqdm>=4.65.0",
   "huggingface_hub",
